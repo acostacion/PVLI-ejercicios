@@ -14,21 +14,23 @@ window.onload = function () {
         li.innerHTML = character.name + ' (<code>' + character.id + '</code>)';
         list.appendChild(li);
     });
+
+        var select = document.querySelector('select[name=chara]');
+    party.forEach(function (character) {
+        var option = document.createElement('option');
+        option.innerHTML = character.name;
+        option.value = character.id;
+        select.appendChild(option);
+    });
+
+    var form = document.querySelector('form[name=bardoma-machine]');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        console.log('A Bardoma chaval');
+    });
 };
 
-var select = document.querySelector('select[name=chara]');
-party.forEach(function (character) {
-    var option = document.createElement('option');
-    option.innerHTML = character.name;
-    option.value = character.id;
-    select.appendChild(option);
-});
 
-var form = document.querySelector('form[name=bardoma-machine]');
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    console.log('A Bardoma chaval');
-});
 
 
 
