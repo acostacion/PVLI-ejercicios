@@ -12,10 +12,11 @@ window.onload = function () {
     party.forEach(function (character) {
         var li = document.createElement('li');
         li.innerHTML = character.name + ' (<code>' + character.id + '</code>)';
+        li.dataset.charaid = character.id;
         list.appendChild(li);
     });
 
-        var select = document.querySelector('select[name=chara]');
+        var select = document.querySelector('select[name=admuf]');
     party.forEach(function (character) {
         var option = document.createElement('option');
         option.innerHTML = character.name;
@@ -26,7 +27,9 @@ window.onload = function () {
     var form = document.querySelector('form[name=bardoma-machine]');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        console.log('A Bardoma chaval');
+        var charaID = form.querySelector('[name=admuf]').value;
+        var li = list.querySelector('[data-charaid=' + charaID + ']');
+        li.classList.add('enbardomado');
     });
 };
 
