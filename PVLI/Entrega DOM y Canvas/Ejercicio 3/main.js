@@ -32,10 +32,7 @@ window.onload = function () {
         var li = list.querySelector('[data-charaid=' + charaID + ']');
         li.classList.add('enbardomado');
         if(li.classList.contains('enbardomado')){
-            event = document.getElementById('moslitos').disabled = true;
-        }
-        else{
-            event.preventDefault();
+            document.getElementById('moslitos').disabled = true;
         }
     });
 
