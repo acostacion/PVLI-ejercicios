@@ -7,6 +7,7 @@ var party = [
     {name: 'Kime', id: 'kime'}
 ];
 
+
 window.onload = function () {
     var list = document.getElementById('party-members');
     party.forEach(function (character) {
@@ -30,7 +31,14 @@ window.onload = function () {
         var charaID = form.querySelector('[name=admuf]').value;
         var li = list.querySelector('[data-charaid=' + charaID + ']');
         li.classList.add('enbardomado');
+        if(li.classList.contains('enbardomado')){
+            event = document.getElementById('moslitos').disabled = true;
+        }
+        else{
+            event.preventDefault();
+        }
     });
+
 };
 
 
