@@ -7,7 +7,6 @@ var party = [
     {name: 'Kime', id: 'kime'}
 ];
 
-
 window.onload = function () {
     var list = document.getElementById('party-members');
     party.forEach(function (character) {
@@ -25,15 +24,24 @@ window.onload = function () {
         select.appendChild(option);
     });
 
+    select.addEventListener('change', function(event){
+        event.preventDefault();
+        var charaID = form.querySelector('[name=admuf]').value;
+        var li = list.querySelector('[data-charaid=' + charaID + ']');
+        if(li.classList.contains('enbardomado')){
+            document.getElementById('moslitos').disabled = true;
+        }
+        else document.getElementById('moslitos').disabled = false;
+
+    })
+
     var form = document.querySelector('form[name=bardoma-machine]');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         var charaID = form.querySelector('[name=admuf]').value;
         var li = list.querySelector('[data-charaid=' + charaID + ']');
         li.classList.add('enbardomado');
-        if(li.classList.contains('enbardomado')){
-            document.getElementById('moslitos').disabled = true;
-        }
+        document.getElementById('moslitos').disabled = true;
     });
 
 };

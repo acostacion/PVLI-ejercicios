@@ -1,0 +1,19 @@
+Ejercicio 1 Contesta a la pregunta ¿Por qué sucede esto?
+
+En "var button" se guarda el objeto con id "summon" del documento (el botón).
+Cuando con el botón hacemos addEventListener('click', function()) programamos que... "al hacer clic en el botón" y pase lo que hay entre corchetes.
+¿Qué pasa al "hacer 'click' en 'button'"?
+- Se muestra en consola de desarrollador (al inspeccionar) el mensaje 'An karanir thanagor'.
+- Crea una imagen llamada "img".
+- Establece la ruta de la imagen con "img.src" con un enlace.
+- Se van añadiendo al elemento <p> (paragraph) con id = "ankisses" hijos que contienen la imagen "img". Por ello cada vez que se le da al botón, aparece un hijo nuevo en <p>.
+
+Esquema:
+
+Al hacer clic en el botón {
+Imprime en consola('An karanir thanagor');
+Crea el objeto imagen;
+Llena la imagen con contenido pictórico ('enlace');
+Crea hijo en el elemento con la etiqueta ('ankisses');
+}
+

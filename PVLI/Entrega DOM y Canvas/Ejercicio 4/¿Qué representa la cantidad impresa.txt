@@ -1,0 +1,3 @@
+¿Qué representa la cantidad impresa?
+
+El delta time (el tiempo transcurrido desde que se renderizó el último fotograma) y los frames de actualización de la pantalla.
